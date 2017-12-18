@@ -1,5 +1,6 @@
 import arcpy
 import pythonaddins
+import arcpy.mapping
 
 class AddBingMaps(object):
     """Implementation for AddIns_addin.button_AddBingMaps (Button)"""
