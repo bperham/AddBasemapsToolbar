@@ -1,6 +1,5 @@
 import arcpy
 import pythonaddins
-import arcpy.mapping
 
 class AddBingMaps(object):
     """Implementation for AddIns_addin.button_AddBingMaps (Button)"""
@@ -15,7 +14,7 @@ class AddBingMaps(object):
         df = arcpy.mapping.ListDataFrames(mxd,"*")[0]
 
         # specify the layer
-        newlayer = arcpy.mapping.Layer(r"N:\GIS\Layer Files\Bing Maps.lyr")
+        newlayer = arcpy.mapping.Layer(r"N:\GIS\Layer Files\BingMaps.lyr")
 
         # add the layer to the map at the bottom of the TOC in data frame 0
         arcpy.mapping.AddLayer(df, newlayer,"BOTTOM")
@@ -25,8 +24,8 @@ class AddBingMaps(object):
         arcpy.RefreshTOC()
         pass
         
-class AddTopoBasemap(object):
-    """Implementation for AddIns_addin.button_AddTopoBasemap (Button)"""
+class AddTopoMaps(object):
+    """Implementation for AddIns_addin.button_AddTopoMaps (Button)"""
     def __init__(self):
         self.enabled = True
         self.checked = False
@@ -38,7 +37,7 @@ class AddTopoBasemap(object):
         df = arcpy.mapping.ListDataFrames(mxd,"*")[0]
 
         # specify the layer
-        newlayer = arcpy.mapping.Layer(r"N:\GIS\Layer Files\Topo Maps.lyr")
+        newlayer = arcpy.mapping.Layer(r"N:\GIS\Layer Files\TopoMaps.lyr")
 
         # add the layer to the map at the bottom of the TOC in data frame 0
         arcpy.mapping.AddLayer(df, newlayer,"BOTTOM")
@@ -48,7 +47,7 @@ class AddTopoBasemap(object):
         arcpy.RefreshTOC()
         pass
 
-    class AddWorldImagery(object):
+class AddWorldImagery(object):
     """Implementation for AddIns_addin.button_AddWorldImagery (Button)"""
     def __init__(self):
         self.enabled = True
@@ -61,7 +60,7 @@ class AddTopoBasemap(object):
         df = arcpy.mapping.ListDataFrames(mxd,"*")[0]
 
         # specify the layer
-        newlayer = arcpy.mapping.Layer(r"N:\GIS\Layer Files\World Imagery.lyr")
+        newlayer = arcpy.mapping.Layer(r"N:\GIS\Layer Files\WorldImagery.lyr")
 
         # add the layer to the map at the bottom of the TOC in data frame 0
         arcpy.mapping.AddLayer(df, newlayer,"BOTTOM")
@@ -71,7 +70,7 @@ class AddTopoBasemap(object):
         arcpy.RefreshTOC()
         pass
 
-    class AddParcelData(object):
+class AddParcelData(object):
     """Implementation for AddIns_addin.button_AddParcelData (Button)"""
     def __init__(self):
         self.enabled = True
@@ -84,7 +83,7 @@ class AddTopoBasemap(object):
         df = arcpy.mapping.ListDataFrames(mxd,"*")[0]
 
         # specify the layer
-        newlayer = arcpy.mapping.Layer(r"N:\GIS\Layer Files\PPLTD Parcel Data.lyr")
+        newlayer = arcpy.mapping.Layer(r"N:\GIS\Layer Files\PPLTD_Parcel_Data.lyr")
 
         # add the layer to the map at the bottom of the TOC in data frame 0
         arcpy.mapping.AddLayer(df, newlayer,"BOTTOM")
@@ -93,3 +92,4 @@ class AddTopoBasemap(object):
         arcpy.RefreshActiveView()
         arcpy.RefreshTOC()
         pass
+
